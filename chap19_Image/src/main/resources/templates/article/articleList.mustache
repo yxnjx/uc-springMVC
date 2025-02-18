@@ -1,0 +1,18 @@
+{{>layouts/header}}
+
+<table class="table">
+    <tr>
+        <td>ID</td> <td>제목</td> <td>내용</td> <td>삭제</td>
+    </tr>
+
+    {{#list}}
+        <tr>
+            <td>{{id}}</td>
+            <td><a href="/articles/{{id}}">{{title}}</a></td>
+            <td>{{content}}</td>
+            <td><a href="/articles/delete/{{id}}">삭제</a></td>
+        </tr>
+    {{/list}}
+</table>
+
+{{>layouts/footer}}

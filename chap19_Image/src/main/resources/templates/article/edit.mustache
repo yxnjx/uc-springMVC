@@ -1,0 +1,12 @@
+{{>layouts/header}}
+
+<!--article/edit 은 form을 띄워주는 역할, /articles/realUpdate는 진짜로 form을 수정하는 역할-->
+<form action="/articles/realUpdate" method="post">
+    id : <input type="hidden" name="id" value="{{article.id}}"><br>
+    제목 : <input type="text" name="title" value="{{article.title}}"><br>
+    내용 : <textarea name="content" rows="3">{{article.content}}</textarea><br>
+
+    <input type="submit" value="수정하기">
+</form>
+
+{{>layouts/footer}}

@@ -1,0 +1,26 @@
+{{>layouts/header}}
+
+<table class="table">
+    <tr>
+        <td>Id</td> <td>Title</td>  <td>Price</td> <td>Content</td> <td>Image</td>
+    </tr>
+
+    {{#sale}}
+        <tr>
+            <td>{{id}}</td> <!-- sale.id -->
+            <td>{{title}}</td>
+            <td>{{price}}</td>
+            <td>{{content}}</td>
+            <td><img src="/images/{{filename}}" width="300" height="300"/></td>
+        </tr>
+    {{/sale}}
+</table>
+
+<a href="/sales/edit/{{sale.id}}" class="btn btn-primary">수정</a>
+<a href="/sales" class="btn btn-secondary">뒤로가기</a>
+
+<!--댓글 추가-->
+{{>comments/_comments}}
+
+{{>layouts/footer}}
+

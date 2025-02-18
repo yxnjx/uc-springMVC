@@ -1,0 +1,17 @@
+{{>layouts/header}}
+
+<table class="table">
+    <tr>
+        <td>ID</td> <td>제목</td> <td>내용</td>
+    </tr>
+
+    {{#list}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+        </tr>
+    {{/list}}
+</table>
+
+{{>layouts/footer}}

@@ -1,0 +1,18 @@
+{{>layouts/header}}
+
+    <!--값을 입력하고 submit 버튼을 누르면 /articles/create로 그 값이 넘어감-->
+    <form action="/articles/create" method="post" class="container">
+        <div class="mb-3"> <!--제목과 내용 사이에 3px을 줌-->
+            <label class="form-label">제목</label>
+            <input type="text" name="title" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">내용</label>
+            <textarea rows="3" name="content" class="form-control"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+{{>layouts/footer}}

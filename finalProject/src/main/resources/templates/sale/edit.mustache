@@ -1,0 +1,39 @@
+{{>layouts/header}}
+
+<script>
+    function validateForm() {
+        var fileInput = document.getElementById('file');
+        if(fileInput.files.length === 0) {
+            alert('이미지를 선택해주세요.');
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<!--article/edit 은 form을 띄워주는 역할, /articles/realUpdate는 진짜로 form을 수정하는 역할-->
+<form class="container" action="/sales/realUpdate" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <input type="hidden" name="id" value="{{sale.id}}"><br>
+    <div class="mb-3">
+        <label class="form-label">제목</label>
+        <input type="text" class="form-control" name="title" value="{{sale.title}}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">가격</label>
+        <input type="text" class="form-control" name="price" value="{{sale.price}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea class="form-control" rows="3" name="content">{{sale.content}}</textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">이미지</label>
+        <input type="file" name="file" value="{{sale.filename}}" id="file">
+    </div>
+
+    <button type="submit" class="btn btn-primary">수정하기</button>
+    <a href="/sales/{{sale.id}}" class="btn btn-secondary">뒤로가기</a>
+    <hr>
+</form>
+
+{{>layouts/footer}}

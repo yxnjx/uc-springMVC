@@ -1,0 +1,10 @@
+{{>layouts/header}}
+
+    <form action="/articles/create" method="post"> <!--값을 입력하고 submit 버튼을 누르면 /articles/create2로 그 값이 넘어감-->
+        제목 : <input type="text" name="title">
+        내용 : <textarea rows="3" name="content"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+{{>layouts/footer}}

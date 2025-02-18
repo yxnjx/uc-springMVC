@@ -1,0 +1,30 @@
+{{>layouts/header}}
+
+<table class="table">
+    <tr>
+        <td>Id</td> <td>Title</td> <td>Content</td> <td>이미지</td>
+    </tr>
+
+    <!--<tr>
+        <td>{{article.id}}</td>
+        <td>{{article.title}}</td>
+        <td>{{article.content}}</td>
+    </tr>-->
+
+    {{#article}} <!-- 위에 거랑 같은 의미 -->
+        <tr>
+            <td>{{id}}</td> <!--article을 쓰겠다고 묶어줬기 때문에 그냥 id만 써도 됨.-->
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+            <td><img src="/images/{{filename}}" width="300" height="300"/></td>
+        </tr>
+    {{/article}}
+</table>
+
+<a href="/articles/edit/{{article.id}}" class="btn btn-primary">수정</a>
+
+<!--댓글 추가-->
+{{>comments/_comments}}
+
+{{>layouts/footer}}
+

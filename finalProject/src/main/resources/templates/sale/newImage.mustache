@@ -1,0 +1,39 @@
+{{>layouts/header}}
+
+<script>
+    function validateForm() {
+        var fileInput = document.getElementById('file');
+        if(fileInput.files.length === 0) {
+            alert('이미지를 선택해주세요.');
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<!-- enctype="multipart/form-data" => form문에서 파일을 선택해서 컨트롤러에 넘길 때 꼭 필요함. -->
+<form class="container" action="/sales/uploadImage" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <div class="mb-3">
+        <label class="form-label">제목</label>
+        <input type="text" class="form-control" name="title" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">가격</label>
+        <input type="text" class="form-control" name="price">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea class="form-control" rows="3" name="content"></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">이미지</label>
+        <input type="file" name="file" id="file">
+    </div>
+
+    <button type="submit" class="btn btn-primary">등록</button>
+    <a href="/" class="btn btn-secondary">뒤로가기</a>
+    <hr>
+
+</form>
+{{>layouts/footer}}
+

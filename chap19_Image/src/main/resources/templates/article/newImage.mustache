@@ -1,0 +1,23 @@
+{{>layouts/header}}
+
+<!-- enctype="multipart/form-data" => form문에서 파일을 선택해서 컨트롤러에 넘길 때 꼭 필요함. -->
+<form class="container" action="/articles/uploadImage" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">제목</label>
+        <input type="text" class="form-control" name="title">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea class="form-control" rows="3" name="content"></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">이미지</label>
+        <input type="file" name="file">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <hr>
+
+</form>
+{{>layouts/footer}}
+
